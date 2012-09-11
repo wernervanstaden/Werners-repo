@@ -1,0 +1,74 @@
+@set P_DIR=C:/JenkinsWorkspace
+@set EXE_NAME=TestLibraries.exe
+@set UNIT_TEST_DIR=C:/JenkinsWorkspace/unitTests/libraries/libraryTests
+@echo ----------------------------------------
+@echo %P_DIR%
+@echo ----------------------------------------
+cd unitTests/makeFiles
+cp Makefile makeSrc.mak %UNIT_TEST_DIR%
+cd %UNIT_TEST_DIR%
+make clean
+del %EXE_NAME%
+make
+%EXE_NAME%
+ren tests.xml libraryTests.xml
+cp libraryTests.xml C:/JenkinsWorkspace
+del Makefile makeSrc.mak
+
+
+
+
+@set P_DIR=C:/JenkinsWorkspace
+@set EXE_NAME=TestKernel.exe
+@set UNIT_TEST_DIR=C:/JenkinsWorkspace/unitTests/rtos/Kernel
+@echo ----------------------------------------
+@echo %P_DIR%
+@echo ----------------------------------------
+cd unitTests/makeFiles
+cp Makefile makeSrc.mak %UNIT_TEST_DIR%
+cd %UNIT_TEST_DIR%
+make clean
+del %EXE_NAME%
+make
+%EXE_NAME%
+ren tests.xml kernelTests.xml
+cp kernelTests.xml C:/JenkinsWorkspace
+del Makefile makeSrc.mak
+
+
+
+@set P_DIR=C:/JenkinsWorkspace
+@set EXE_NAME=TestOutputs.exe
+@set UNIT_TEST_DIR=C:/JenkinsWorkspace/unitTests/drivers/outputs
+@echo ----------------------------------------
+@echo %P_DIR%
+@echo ----------------------------------------
+cd unitTests/makeFiles
+cp Makefile makeSrc.mak %UNIT_TEST_DIR%
+cd %UNIT_TEST_DIR%
+make clean
+del %EXE_NAME%
+make
+%EXE_NAME%
+ren tests.xml outputsTests.xml
+cp outputsTests.xml C:/JenkinsWorkspace
+del Makefile makeSrc.mak
+
+
+
+@set P_DIR=C:/JenkinsWorkspace
+@set EXE_NAME=TestLis3dh.exe
+@set UNIT_TEST_DIR=C:/JenkinsWorkspace/unitTests/drivers/acc/lis3dh
+@echo ----------------------------------------
+@echo %P_DIR%
+@echo ----------------------------------------
+cd unitTests/makeFiles
+cp Makefile makeSrc.mak %UNIT_TEST_DIR%
+cd %UNIT_TEST_DIR%
+make clean
+del %EXE_NAME%
+make
+%EXE_NAME%
+ren tests.xml lis3dhTest.xml
+cp lis3dhTest.xml C:/JenkinsWorkspace
+del Makefile makeSrc.mak
